@@ -1,43 +1,37 @@
-# Finance Workflows Dashboard
+# Finance Workflows Dashboard (React + Vite)
 
-Фронтенд-дашборд для просмотра workflow и отметки шагов как выполненных.  
-React + Vite + TypeScript, без бэкенда — данные в локальном состоянии.
+Demo UI for business/finance workflows. Shows workflow list, steps, and allows marking steps as completed via REST API.
 
-## Стек
+## Features
 
-- React 18
-- Vite
-- TypeScript
+- Workflow list (left)
+- Workflow details + steps (right)
+- "Mark complete" updates backend and refreshes UI
+- Configurable API base URL via `.env`
 
-## Структура
+## Tech Stack
 
-```
-finance-workflows-dashboard/
-  src/
-    data/workflows.ts      # типы и начальные 4 workflow
-    components/
-      WorkflowList.tsx     # список workflow слева
-      WorkflowDetail.tsx   # детали + кнопки Mark complete
-    App.tsx
-    main.tsx
-  index.html
-  package.json
-  vite.config.ts
-  README.md
-```
+- React + Vite + TypeScript
+- REST интеграция с FastAPI backend
 
-## Установка и запуск
+## Setup
 
 ```bash
-cd finance-workflows-dashboard
 npm install
+cp .env.example .env
 npm run dev
 ```
 
-Открой в браузере адрес http://localhost:5173
+## API
 
-## Возможности
+Backend должен быть запущен на http://127.0.0.1:8000
 
-- Список из 4 workflow (Invoice approval, Expense reimbursement, KYC onboarding, Chargeback handling)
-- Выбор workflow → отображение шагов
-- Кнопка «Mark complete» для каждого шага (локальное состояние)
+Endpoints used:
+
+- `GET /workflows`
+- `POST /workflows/{workflow_id}/steps/{step_id}/complete`
+## Screenshots
+
+![Workflow Dashboard UI](./docs/ui.png)
+
+

@@ -1,4 +1,5 @@
-export type Step = { id: string; title: string; status: "pending" | "completed" };
+export type StepStatus = "pending" | "completed" | "blocked";
+export type Step = { id: string; title: string; status: StepStatus };
 export type Workflow = { id: string; name: string; description?: string; steps: Step[] };
 
 export const initialWorkflows: Workflow[] = [

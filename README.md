@@ -1,37 +1,39 @@
 # Finance Workflows Dashboard (React + Vite)
 
-Demo UI for business/finance workflows. Shows workflow list, steps, and allows marking steps as completed via REST API.
+Frontend demo of a finance / business workflow system.
+Shows workflows, steps, step-specific actions and activity log.
+State is stored locally (no backend yet).
 
 ## Features
 
-- Workflow list (left)
-- Workflow details + steps (right)
-- "Mark complete" updates backend and refreshes UI
-- Configurable API base URL via `.env`
+- Workflow list (Dashboard)
+- Workflow details page
+- Step-by-step process (Receive → Validate → Approve → Schedule)
+- Step-specific forms and actions
+- Reject / blocked flow
+- Activity log (audit trail)
+- Inbox view
+- Local persistence (in-memory / localStorage)
 
 ## Tech Stack
 
-- React + Vite + TypeScript
-- REST интеграция с FastAPI backend
+- React
+- TypeScript
+- Vite
+- React Router
+- Local state (no backend yet)
 
 ## Setup
 
 ```bash
 npm install
-cp .env.example .env
 npm run dev
 ```
 
 ## API
 
-Backend должен быть запущен на http://127.0.0.1:8000
+Должен быть запущен на https://finance-workflows-homejob-aocwesc5k-alexs-projects-cb770374.vercel.app/
 
-Endpoints used:
-
-- `GET /workflows`
-- `POST /workflows/{workflow_id}/steps/{step_id}/complete`
 ## Screenshots
 
-![Workflow Dashboard UI](./docs/ui.png)
-
-
+![Workflow Dashboard UI](./docs/screenshot.png)
